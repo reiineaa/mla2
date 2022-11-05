@@ -1,0 +1,33 @@
+from dataclasses import dataclass
+
+
+@dataclass
+class Point:
+    x: float
+    y: float
+    z: float = 0.0
+
+
+p = Point(1.5, 2.5)
+
+print(p)  # Point(x=1.5, y=2.5, z=0.0)
+
+
+from typing import NamedTuple
+
+
+class User(NamedTuple):
+    name: str
+
+
+class MyStruct(NamedTuple):
+    foo: str
+    bar: int
+    baz: list
+    qux: User
+
+
+my_item = MyStruct('foo', 0, ['baz'], User('peter'))
+
+print(my_item) # MyStruct(foo='foo', bar=0, baz=['baz'], qux=User(name='peter'))
+
